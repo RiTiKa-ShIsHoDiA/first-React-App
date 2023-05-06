@@ -90,7 +90,8 @@ function Main() {
     function handlehamburger(e){
     const navmenu = document.getElementById("menu-content");
     console.log("chala");
-    e.target.classList.toggle("open");
+   
+   /* e.target.classList.toggle("open");*/
     navmenu.classList.toggle("hidden");
     navmenu.classList.toggle("flex");
  }
@@ -173,12 +174,12 @@ function handleDarkmode(){
             {/**Desktop view*/}
             <div
               id="menu-content-desk"
-              class=" md:block hidden top-0 bottom-0 text-md  dark:bg-slate-800 px-2  flex-col  bg-gray-100 text-gray-500 space-y-3 items-center"
+              class=" md:block hidden top-0 bottom-0 text-md  dark:bg-slate-800   flex-col  bg-gray-100 text-gray-500 space-y-3 items-center"
             >
               <h2 className="font-xl font-bold mt-8 mb-4 dark:text-white">TO-DO LIST</h2>
               <button
                 type="button"
-                className="addbtn px-10 py-2  top-20"
+                className="addbtn px-10 py-2  top-20 m"
                 onClick={(e) => setForm(true)}
               >
                 Add new task
@@ -191,6 +192,27 @@ function handleDarkmode(){
                 <p className="nav-list-p" onClick = {()=>handleLeftNav(3)}>Important Tasks</p>
               </div>
             </div>
+            {/** hamburger button */}
+            <div className="md:hidden p-2  "  >
+              <button
+                id="menu"
+                type="button"
+                className="z-40  mt-7 w-20 p-3 hamburger left-0 focus:outline-none "
+                onClick={handlehamburger}
+              >
+                <span
+                  className="hamburger-top "
+                           ></span>
+                <span
+                  className="hamburger-middle"
+                 
+                ></span>
+                <span
+                  className="hamburger-bottom"
+                  
+                ></span>
+              </button>
+            </div>
             {/*Mobile view*/}
             <div
               id="menu-content"
@@ -199,7 +221,7 @@ function handleDarkmode(){
               <h2 className="font-xl font-bold  mt-8 mb-8 dark:text-white">TO-DO LIST</h2>
               <button
                 type="button"
-                className=" addbtn px-10 py-2 top-20"
+                className=" addbtn px-10 py-2 top-20 ml-4 mr-4"
                 onClick={(e) => setForm(true)}
               >
                 Add new task
@@ -213,27 +235,7 @@ function handleDarkmode(){
                 <p className="nav-list-p" onClick = {()=>handleLeftNav(3)}>Important Tasks</p>
               </div>
             </div>
-            <div className="md:hidden p-2  ">
-              <button
-                id="menu"
-                type="button"
-                className="z-40  mt-7  hamburger left-0 focus:outline-none"
-                onClick={(e) => handlehamburger(e)}
-              >
-                <span
-                  className="hamburger-top "
-                  onClick={(e) => e.stopPropagation()}
-                ></span>
-                <span
-                  className="hamburger-middle"
-                  onClick={(e) => e.stopPropagation()}
-                ></span>
-                <span
-                  className="hamburger-bottom"
-                  onClick={(e) => e.stopPropagation()}
-                ></span>
-              </button>
-            </div>
+            
           </nav>
           <div className="md:px-4 w-full md:py-8  flex  ">
             <div className=' w-full'>
