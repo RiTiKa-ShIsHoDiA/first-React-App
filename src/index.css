@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  h1{
+    @apply  text-slate-600 text-2xl font-medium mt-12 mb-8 justify-items-center md:text-start md:w-1/2 md:ml-8 dark:text-white;
+  }
+ 
+  form input{
+    @apply bg-gray-50 outline-none p-2  my-auto rounded-md  hover:border-2 hover:border-[#7c3aed] duration-100 md:py-1 ;
+  }
+  form label{
+    @apply mt-8;
+  }
+}
+.btn{
+  @apply bg-[#7c3aed] text-white rounded-lg px-5 py-3 hover:bg-[#5d18d4] duration-75  ;
+}
+.completed-btn{
+  @apply  font-semibold  px-2 rounded-full h-8 mr-4;
+}
+.star-color{
+   @apply  w-6 h-6  ;
+}
+.grid-data{
+   @apply md:grid md:grid-cols-3  md:gap-1   md:px-6 mt-4 md:w-[800px] w-full md:py-4 px-16  mb-12 ;
+}
+.nav-list{
+   @apply space-y-3 justify-start text-left pt-8 md:text-lg text-sm w-full ;
+}
+.nav-list-p{
+ @apply hover:bg-gray-300 hover:border-r-4 border-red-500 px-4 py-2 hover:rounded-md dark:text-white dark:hover:bg-slate-700;
+}
+.addbtn{
+  @apply bg-[#7c3aed] text-white rounded-lg hover:bg-[#5d18d4] duration-75  hover:shadow-lg hover:shadow-[#7c3aed]
+}
+.hamburger{
+  position:relative;
+  cursor:pointer;
+  width:20px;
+  height:24px;
+  transition:all 0.25s;  
+}
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position:absolute;
+  width:24px;
+  height:2px;
+  top:0px;
+  left:0px;
+  transform:rotate(0.5deg);
+  transition:all 0.5s;
+  background-color:gray;
+}
+.hamburger-middle{
+  transform:translateY(7px);
+} 
+.hamburger-bottom{
+  transform:translateY(14px);
+}
+
+.open{
+   transform:rotate(90deg )   
+}
+.open .hamburger-top{
+  transform:rotate(45deg)  translateX(6px) translateY(6px);
+} 
+.open .hamburger-middle{
+  display:none;
+}
+.open .hamburger-bottom{
+  transform:rotate(-45deg)  translateX(-6px) translateY(6px);
+} 
+progress::-webkit-progress-value {
+  background: #5d18d4;
+  border-radius:10px;
+  height:12px;
+}
+progress::-webkit-progress-bar {
+  background-color: #aaaab5;
+  border-radius:10px;
+  height:12px;
+}
+.dark progress::-webkit-progress-bar {
+  background-color: white;
+  border-radius:10px;
+  height:12px;
+}
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+ 
+  color:white;
+  filter:invert(1);
+
+}
